@@ -1,4 +1,3 @@
-package cinema;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -46,10 +45,28 @@ public class Cinema {
 
     static void createMatrix() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of rows:");
-        rows = sc.nextInt();
-        System.out.println("Enter the number of seats in each row:");
-        seats = sc.nextInt();
+        
+        while (true) {
+        	System.out.println("Enter the number of rows:");
+            rows = sc.nextInt();
+            
+            if (rows < 1) {
+            	System.out.println("You cinema must have at least 1 row of seats!");
+            } else {
+            	break;
+            }
+        }
+        
+        while (true) {
+        	System.out.println("Enter the number of seats in each row:");
+            seats = sc.nextInt();
+            
+            if (seats < 1) {
+            	System.out.println("Your cinema must have at least 1 seat in a row!");
+            } else {
+            	break;
+            }
+        }
 
         matrix = new char[rows][seats];
         for (char[] arr : matrix) {
@@ -69,7 +86,7 @@ public class Cinema {
         System.out.println("Cinema:");
         System.out.print(" ");
 
-        while (seatCnt <= array.length + 1) {
+        while (seatCnt <= array.length) {
             System.out.print(" " + seatCnt);
             seatCnt++;
         }
