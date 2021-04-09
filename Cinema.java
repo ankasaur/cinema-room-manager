@@ -23,7 +23,6 @@ public class Cinema {
 
             Scanner sc = new Scanner(System.in);
             int action = sc.nextInt();
-            sc.close();
 
             switch (action) {
                 case 1:
@@ -51,7 +50,6 @@ public class Cinema {
         rows = sc.nextInt();
         System.out.println("Enter the number of seats in each row:");
         seats = sc.nextInt();
-        sc.close();
 
         matrix = new char[rows][seats];
         for (char[] arr : matrix) {
@@ -107,7 +105,6 @@ public class Cinema {
                 if (matrix[rowNum - 1][seatNum - 1] == 'B') {
                     System.out.println("That ticket has already been purchased!");
                 } else {
-                    sc.close();
                     matrix[rowNum - 1][seatNum - 1] = 'B';
                     soldNum += 1;
                     break;
